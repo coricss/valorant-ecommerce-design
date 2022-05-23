@@ -24,7 +24,7 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
-
+  /* DEFAULT FONT AND HEIGHT */
   html, body{
     font-family: 'Arial', Helvetica, sans-serif;
     padding: 0;
@@ -32,10 +32,14 @@
     height: 100%;
     scroll-behavior: smooth;
   }
+  /* MAIN CONTAINER */
   .main{
     height: 100%;
     min-height: calc(100vh - 211px - 58px);
+    margin-top: 6.5rem;
+    position: relative;
   }
+  /* HEADER FOOTER COLOR */
   .header, .footer{
     background-color: #111;
   }
@@ -46,6 +50,7 @@
   .logo:hover{
     color: #ff0000 !important;
   } 
+  /* NAV STYLE */
   .nav-links{
     font-size: 12px;
     font-weight: light;
@@ -57,6 +62,7 @@
   .nav-items:hover{
     color: rgb(211, 211, 211) !important;
   }
+  /* SEARCH INPUT DESIGN */
   .search-bar{
     position: relative;
     width: 100%;
@@ -66,6 +72,7 @@
     box-shadow: none !important;
     border-radius: 0%;
   }
+  /* SEARCH BUTTON DESIGN */
   .btn-search{
     position: absolute;
     right: 25%;
@@ -74,6 +81,7 @@
     box-shadow: none !important;
     background-color: #ff4655 !important;
   }
+  /* CARD NOTIF DESIGN */
   .cart-notif{
     position: relative;
   }
@@ -86,6 +94,7 @@
     top: 2%;
     right: 0%;
   }
+  /* PROFILE DESIGN */
   .profile{
     cursor: pointer;
   }
@@ -95,14 +104,12 @@
   .profile-img, .profile-pic{
     width: 20px;
   }
-  .main{
-    margin-top: 6.5rem;
-    position: relative;
-  }
+  /* WEAPON SCROLL */
   #weapons{
     scroll-margin-top: 6.5rem;
     margin-top: 10rem;
   }
+  /* VALORANT BACKGROUND */
   .home-page{
     box-shadow: 0 0px 10px 0 rgb(0 0 0 / 14%);
     background-color: #0f1923;
@@ -115,12 +122,14 @@
     max-height: 100%;
     height: 100%;
   }
+  /*CAROUSEL STYLE */
   .carousel-item img{
     filter: brightness(60%);
   }
   #carouselBundles{
     width: 100%;
   }
+  /* SEE MORE BUTTON STYLE */
   .btn-see-more{
     margin-left: 0px;
     outline: none !important;
@@ -141,6 +150,7 @@
     width: 100% !important;
     border-radius: 0% !important;
   }
+  /* SEE MORE BUTTON STYLE */
   .weapon-link img{
     transition: .5s ease-in-out;
   }
@@ -154,7 +164,6 @@
     justify-content: center;
     flex-flow: column;
   }
-
   .weapon-link a {
     margin: 0;
     box-sizing: border-box;
@@ -164,6 +173,7 @@
     position: relative;
     overflow: hidden;
   }
+  /* FILTER STYLE */
   a span.bg-red {
     left: -15%;
     position: absolute;
@@ -179,6 +189,7 @@
   a:hover span.bg-red {
     width: 150%;
   }
+   /* VIEW ARSENAL BUTTON STYLE */
   .button-weapons{
     display: flex;
     align-items: center;
@@ -285,6 +296,7 @@
   .button-weapons a:hover span.text:after {
     background: #ece8e1;
   }
+  /* VALORANT IMAGE AND BAR CODE STYLE */
   .valo-img, .bar-code{
     position: relative;
   }
@@ -305,6 +317,7 @@
     position: absolute;
     overflow: hidden;
   }
+  /* BUTTON ICONS STYLE */
   .btn-socmed{
     box-shadow: none !important;
   }
@@ -348,18 +361,21 @@
       </div>
     </div>
     <div class="container d-flex align-items-center justify-content-between" data-aos="fade" data-aos-delay="100" aos-init aos-animate>
+      <!-- LOGO -->
       <a class="text-decoration-none brand-logo" href="index.html">
         <div class="logo d-flex align-items-center text-white p-2">
           <img width="25px" src="https://evilgeniuses.gg/wp-content/uploads/2021/06/valorant_white.png" alt="">
           <h4 class="head-title" style="font-family: 'VALORANT', sans-serif;">ARMORY</h4>
         </div>
       </a>
+      <!-- SEARCH -->
       <form action="sheriff.html" class="w-100">
         <div class="search-bar d-flex justify-content-center">
           <input type="text" class="form-group search-input form-control mx-2" placeholder="Search" required>
           <button type="submit" class="btn btn-danger btn-search"><i class="bx bx-search"></i></button>
         </div>
       </form>
+      <!-- CART -->
       <div class="cart-notif" style="cursor: pointer">
         <i class='bx bxs-cart bx-tada fs-2 text-white'></i>
         <div class="notif-cart text-white rounded-circle text-center">
@@ -368,7 +384,7 @@
       </div>
     </div>
   </div>
-  <!-- ADS -->
+  <!-- MAIN -->
   <div>
     <div class="main mb-5">
       <div class="home-page">
@@ -377,6 +393,7 @@
           <hr>
           <div class="bundles">
             <div class="row g-5">
+              <!-- CAROUSEL -->
               <div class="col-lg-6 col-md-12"  style="z-index: 1;">
                 <div id="carouselBundles" class="carousel slide" data-bs-ride="carousel" data-aos="fade-right" data-aos-delay="400" aos-init aos-animate>
                   <div class="carousel-indicators">
@@ -434,8 +451,8 @@
                     </p>
                   </a>
                 </div>
-                
               </div>
+              <!-- NEW AGENT -->
               <div class="col-lg-6 col-md-12"  style="z-index: 1;">
                 <div class="agent">
                   <h5 class="text-uppercase text-start mb-2" style="font-family: 'Anton', sans-serif; font-size: 40px;" data-aos="fade-left" data-aos-delay="600" aos-init aos-animate>New Agent: <span style="font-size: 45px; color: #ff4655;">FADE</span></h5> 
@@ -456,6 +473,7 @@
                         <p class="fw-bold text-uppercase" style="font-size: 15px;" data-aos="fade-left" data-aos-delay="1000" aos-init aos-animate>// Biography</p>
                         <p class="" style="font-size: 15px; text-align: justify;" data-aos="fade-left" data-aos-delay="1100" aos-init aos-animate>Turkish bounty hunter, Fade, unleashes the power of raw nightmares to seize enemy secrets. Attuned with terror itself, she hunts targets and reveals their deepest fears—before crushing them in the dark.</p>
                         <hr>
+                        <!-- SEE MORE BUTTON -->
                         <a href="https://playvalorant.com/en-us/agents" target="_blank">
                           <button class="btn-see-more text-start" data-aos="fade-right" data-aos-delay="800" aos-init aos-animate>
                             <div class="d-flex">
@@ -479,18 +497,22 @@
         </div>
       </div>
       <div class="container">
+        <!-- VALORANT VERTICAL IMAGE -->
         <div class="valo-img">
           <img src="https://assets.valorantesports.com/val/val-text-large.44ac1a4f6f.svg" height="3202" width="463" alt="" class="valo-side-img" data-aos="fade-up" data-aos-delay="700" aos-init aos-animate>
         </div>
+        <!-- BAR CODE IMAGE -->
         <div class="bar-code">
           <img src="https://assets.valorantesports.com/val/bar-code.08293391de.svg" height="441" width="64" alt="" class="valo-bar-code" data-aos="fade-up" data-aos-delay="400" aos-init aos-animate>
         </div>
+        <!-- YOUTUBE EMBED -->
         <iframe class="mt-5" width="100%" height="600px" src="https://www.youtube-nocookie.com/embed/xU2U73Tk-DM?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" data-aos="fade-up" data-aos-delay="1100" aos-init aos-animate></iframe>     
         <div id="weapons"></div>
         <div class="weapons-title text-center" data-aos="fade-up" data-aos-delay="100" aos-init aos-animate>
           <h5 style="font-family: 'Anton', sans-serif; font-size: 70px; color: #0f1923;" >CHOOSE YOUR WEAPON</h5>
         </div>
         <hr>
+        <!-- WEAPONS CATEGORY -->
         <div class="weapon-category mt-5 p-3">
           <div class="row g-4">
             <div class="col-lg-3 col-md-12" data-aos="flip-right" data-aos-delay="300" aos-init aos-animate>
@@ -604,6 +626,7 @@
         </div>
       </div>
     </div>
+    <!-- FOOTER -->
     <footer>
       <div style="background-color: #292929">
         <div class="text-center text-white p-4">
@@ -654,9 +677,6 @@
       </div>
     </footer>
   </div>
-  
-  
-  <!-- <h4 data-aos="zoom-in-left" data-aos-delay="0" aos-init aos-animate>Valorant</h4> -->
 
 
   <!-- BOOTSTRAP JS -->
