@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIFLES | VALORANT ARMORY</title>
+   <!-- VALORANT ICON -->
+  <link rel="icon" href="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/igjlmddsvpjeqyoij6ht">
+
+  <!-- FONTS -->
+  <link href="http://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+   <!-- BOOTSTRAP CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- AOS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+
+  <!-- BOXICONS CDN -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+  
+  html, body{
+    font-family: 'Arial', Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  .main{
+    min-height: calc(100vh - 211px - 58px);
+  }
+  .header, .footer{
+    background-color: #111;
+  }
+  h4.head-title{
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  .logo:hover{
+    color: #ff0000 !important;
+  } 
+  .nav-links{
+    font-size: 12px;
+    font-weight: light;
+    color: rgb(153, 153, 153) !important;
+  }
+  .nav-items{
+    color: #fff !important;
+  }
+  .nav-items:hover{
+    color: rgb(211, 211, 211) !important;
+  }
+  .sidenav{
+    height: 100%;
+
+  }
+  .sidenav-content{
+    margin-top: 2rem;
+  }
+  .search-bar{
+    position: relative;
+    width: 100%;
+  }
+  .search-input{
+    width: 50%;
+    box-shadow: none !important;
+    border-radius: 0%;
+  }
+  .btn-search{
+    position: absolute;
+    right: 25%;
+    border-radius: 0%;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #ff4655 !important;
+  }
+  .cart-notif{
+    position: relative;
+  }
+  .notif-cart{
+    position: absolute;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    font-size: 10px;
+    top: 2%;
+    right: 0%;
+  }
+  .profile{
+    cursor: pointer;
+  }
+  .profile:hover .username{
+    color: rgb(211, 211, 211) !important;
+  }
+  .profile-img, .profile-pic{
+    width: 20px;
+  }
+  .main{
+    margin-top: 6.5rem;
+    position: relative;
+  }
+  #weapons{
+    scroll-margin-top: 6.5rem;
+    margin-top: 10rem;
+  }
+  .bundles{
+    max-height: 100%;
+    height: 100%;
+  }
+  .carousel-item img{
+    filter: brightness(60%);
+  }
+  #carouselBundles{
+    width: 100%;
+  }
+  .btn-see-more{
+    margin-left: 0px;
+    outline: none !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+  .btn-see-more .arrow{
+    transition: .3s;
+  }
+
+  .btn-see-more:hover .arrow{
+    margin-left: 10px;
+  }
+  .bg-v-dark{
+    background-color: #0f1923;
+  }
+  .card{
+    width: 100% !important;
+    border-radius: 0% !important;
+  }
+  .card img{
+    transition: .5s ease-in-out;
+  }
+  .card:hover img.img-product{
+    transform: scale(1.1);
+    filter: brightness(130%);
+  }
+  .weapon-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    height: 100% !important;
+  }
+
+  .weapon-link a {
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  a span.bg-red {
+    left: -15%;
+    position: absolute;
+    background-color: red;
+    mix-blend-mode: darken;
+    opacity: .7;
+    width: 0%;
+    height: 100%;
+    z-index: 3;
+    transition: 0.3s ease-out all;
+    transform: skewX(-10deg);
+  }
+  .card:hover a span.bg-red {
+    width: 150%;
+  }
+  .button-weapons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  .button-weapons a{
+    width: 100%;
+    max-width: 240px;
+    height: 54px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #0f1923;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset #0f1923;
+    position: relative;
+    margin: 10px 0;
+    box-sizing: initial;
+  }
+  .button-weapons a:after, .button-weapons a:before {
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 8px;
+    background: #fcfcfc;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .button-weapons a:before {
+    right: 0;
+    left: initial;
+  }
+  .button-weapons a p {
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .button-weapons a p span.base {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border: 1px solid #0f1923;
+  }
+  .button-weapons a p span.base:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    left: -1px;
+    top: -1px;
+    background: #0f1923;
+    position: absolute;
+    transition: 0.3s ease-out all;
+  }
+  .button-weapons a p span.bg {
+    left: -5%;
+    position: absolute;
+    background: #ff4655;
+    width: 0;
+    height: 100%;
+    z-index: 3;
+    transition: 0.3s ease-out all;
+    transform: skewX(-10deg);
+  }
+  .button-weapons a p span.text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .button-weapons a p span.text:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    right: 0;
+    bottom: 0;
+    background: #030303;
+    position: absolute;
+    transition: 0.3s ease-out all;
+    z-index: 5;
+  }
+  .button-weapons a:hover {
+    color: #ece8e1;
+  }
+  .button-weapons a:hover span.bg {
+    width: 110%;
+  }
+  .button-weapons a:hover span.text:after {
+    background: #ece8e1;
+  }
+  .btn-socmed{
+    box-shadow: none !important;
+  }
+  .img-product{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: auto;
+    width: 100%;
+  }
+  footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100%;  /* This value is the height of your footer */
+  }
+  /* font-family: 'Anton', sans-serif; 
+  font-family: 'VALORANT', sans-serif;
+  */
+  
+</style>
+<body class="bg-light">
+  <!-- NAVBAR -->
+  <div class="container-fluid p-2 fixed-top header">
+    <div class="container d-flex align-items-center justify-content-between mb-4" data-aos="fade" data-aos-delay="100" aos-init aos-animate>
+      <div class="d-flex nav-links">
+        <a class="text-decoration-none nav-items mx-2" href="https://playvalorant.com/en-sg/media/" target="_blank">Media</a>|
+        <a class="text-decoration-none nav-items mx-2" href="https://playvalorant.com/en-sg/news/" target="_blank">News</a>|
+        <a class="text-decoration-none nav-items mx-2" href="https://valorantesports.com/" target="_blank">Esports</a>|
+        <a class="text-decoration-none nav-items mx-2" href="https://support-valorant.riotgames.com/hc/en-us/?_ga=2.66471848.768027774.1653184676-210090797.1646183791&_gac=1.92320495.1653184681.Cj0KCQjwm6KUBhC3ARIsACIwxBihVpzZWufhfJZmUw-6BjDbYiUeveGIIT7HEKWrL39wvzD6pGTxW3MaApH9EALw_wcB" target="_blank">Support</a>
+      </div>
+      <div class="d-flex nav-links">
+        <a class="text-decoration-none nav-items mx-2 d-flex align-items-center" href="#">
+          <i class='bx bxs-bell'></i>
+          &nbsp;Notifications
+        </a>
+        <a class="text-decoration-none nav-items mx-2 d-flex align-items-center" href="#">
+          <i class='bx bx-help-circle' ></i>
+          &nbsp;Help
+        </a>
+        <a class="text-decoration-none nav-items mx-2 d-flex align-items-center" href="#">
+          <i class='bx bx-globe' ></i>
+          &nbsp;English
+          <i class='bx bx-chevron-down fs-5' ></i>
+        </a>
+        <div class="profile d-flex align-items-center mx-1">
+          <div class="profile-img">
+            <img class="profile-pic rounded-circle" src="https://i.ibb.co/xmz3ggp/1646411370269.jpg" alt="1646411370269" border="0">
+          </div>
+          <div class="username text-white mx-1">
+            <b>Rics#1031</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex align-items-center justify-content-between" data-aos="fade" data-aos-delay="100" aos-init aos-animate>
+      <a class="text-decoration-none brand-logo" href="index.html">
+        <div class="logo d-flex align-items-center text-white p-2">
+          <img width="25px" src="https://evilgeniuses.gg/wp-content/uploads/2021/06/valorant_white.png" alt="">
+          <h4 class="head-title" style="font-family: 'VALORANT', sans-serif;">ARMORY</h4>
+        </div>
+      </a>
+      <form action="sheriff.html" class="w-100">
+        <div class="search-bar d-flex justify-content-center">
+          <input type="text" class="form-group search-input form-control mx-2" placeholder="Search" required>
+          <button type="submit" class="btn btn-danger btn-search"><i class="bx bx-search"></i></button>
+        </div>
+      </form>
+      <div class="cart-notif" style="cursor: pointer">
+        <i class='bx bxs-cart bx-tada fs-2 text-white'></i>
+        <div class="notif-cart text-white rounded-circle text-center">
+          <span>5</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BUNDLE -->
+<div class="main container mb-5">
+  <div class="row">
+    <div>
+      <section class="products-container p-2 mt-3">
+        <h4 class="text-uppercase text-start" style="font-family: 'Anton', sans-serif; font-size: 85px; color: #0f1923;" data-aos="fade-left" data-aos-delay="200" aos-init aos-animate>// Rifles</h4>
+        <hr>
+        <div class="row products g-3 mt-2">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-elderflame-vandal-variant-3-dark-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Elderflame Vandal · Variant 3 Dark</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <b>2,475</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      5,693 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-glitchpop-ep-2-vandal-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Glitchpop, EP 2 Vandal</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b> 2,175</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      6,453 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-prime-vandal-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Prime Vandal</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b>1,775 </b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bxs-heart text-danger' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger' ></i> 
+                      8,793 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-reaver-vandal-variant-1-red-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Reaver Vandal · Variant 1 Red</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b>1,775</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      6,093 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row products g-3 mt-2">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-reaver-vandal-variant-3-white-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Reaver Vandal · Variant 3 White</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <b>1,775</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bxs-heart text-danger' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      6,890 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="600" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-blastx-phantom-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">BlastX Phantom</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b> 2,175 </b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      6,578 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="700" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-glitchpop-ep-2-phantom-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Glitchpop, EP 2 Phantom</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <b>1,775 </b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      6,213 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="800" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-ion-phantom-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Ion Phantom</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b>1,775</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bxs-heart text-danger' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      4,053 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row products g-3 mt-2">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="900" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-prime-guardian-variant-3-yellow-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Prime Guardian · Variant 3 Yellow</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <b>1,775</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted'></i><i class='bx bxs-star text-muted' ></i> 
+                      4,590 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="1000" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-reaver-guardian-variant-3-white-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Reaver Guardian · Variant 3 White</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b> 2,175 </b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bxs-heart text-danger' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      5,480 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="1100" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-oni-guardian-variant-3-white-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Oni Guardian · Variant 3 White</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <b>1,775 </b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      4,653 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="1200" aos-init aos-animate>
+            <div class="weapon-link">
+              <div class="card p-2 bg-white h-100" style="border-radius: 0% !important; cursor: pointer;">
+                <a href="#" class="text-decoration-none h-100 text-center">
+                  <span class="bg-red"></span>
+                  <img class="img-product" src="https://vgraphs.com/images/weapons/skins/full-details/valorant-ego-guardian-variant-2-tan-weapon-skin.png" alt="">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase" style="font-family: 'Anton', san serif">Ego Guardian · Variant 2 Tan</h5>
+                  <div class="d-flex">
+                    <p class="card-text text-danger"> <span class="text-muted text-decoration-line-through" style="font-size: 15px">2475</span> <b>1,775</b></p>
+                    <img class="p-1 rounded-circle border border-1 border-dark mx-2" width="20px" height="20px" src="https://logodownload.org/wp-content/uploads/2020/06/valorant-logo-1.png" alt="">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class='bx bx-heart text-muted' ></i>
+                    <p class="float-right m-0">
+                      <i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-danger'></i><i class='bx bxs-star text-muted' ></i> 
+                      4,434 sold
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div style="position:relative;">
+  <footer>
+    <div style="background-color: #292929">
+      <div class="text-center text-white p-4">
+        <div class="container text-center">
+          <center>
+          <div class="socmed w-50 d-flex align-items-center justify-content-center">
+            <a class="text-decoration-none" href="https://twitter.com/playvalorant" target="_blank">
+              <button class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center p-2 mx-2 btn-socmed">
+                <i class='bx bxl-twitter fs-3' ></i>
+              </button>
+            </a>
+            <a class="text-decoration-none" href="https://www.youtube.com/PlayValorant" target="_blank">
+              <button class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center p-2 mx-2 btn-socmed">
+                <i class='bx bxl-youtube fs-3' ></i>
+              </button>
+            </a>
+            <a class="text-decoration-none" href="https://www.instagram.com/playvalorantofficial/" target="_blank">
+              <button class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center p-2 mx-2 btn-socmed">
+                <i class='bx bxl-instagram fs-3' ></i>
+              </button>
+            </a>
+            <a class="text-decoration-none" href="https://www.facebook.com/playvalorant/" target="_blank">
+              <button class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center p-2 mx-2 btn-socmed">
+                <i class='bx bxl-facebook-circle fs-3' ></i>
+              </button>
+            </a>
+            <a class="text-decoration-none" href="https://discord.gg/valorant" target="_blank">
+              <button class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center p-2 mx-2 btn-socmed">
+                <i class='bx bxl-discord-alt fs-3' ></i>
+              </button>
+            </a>
+          </div>
+        </center>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="text-center text-white p-5">
+        <a class="text-decoration-none brand-logo text-white" href="index.html">
+          <img width="45px" src="https://evilgeniuses.gg/wp-content/uploads/2021/06/valorant_white.png" alt="">
+          <h4 class="head-title mt-3 mb-3" style="font-family: 'VALORANT', sans-serif;">ARMORY</h4>
+        </a>
+        <div class="text-center">
+          <p class="m-0 text-muted" style="font-size: 15px;">© 2022 Riot Games, Inc. Riot Games, VALORANT, and any associated logos are trademarks, service marks, and/or registered trademarks of Riot Games, Inc.</p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+  <!-- <h4 data-aos="zoom-in-left" data-aos-delay="0" aos-init aos-animate>Valorant</h4> -->
+
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- AOS JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- AOS INITIALIZATION -->
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+
+  <!-- BOXICONS SCRIPT -->
+  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+</body>
+</html>
