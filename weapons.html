@@ -24,7 +24,7 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
-  
+  /* DEFAULT FONT AND HEIGHT */
   html, body{
     font-family: 'Arial', Helvetica, sans-serif;
     padding: 0;
@@ -32,9 +32,13 @@
     height: 100%;
     scroll-behavior: smooth;
   }
+  /* MAIN CONTAINER */
   .main{
     min-height: calc(100vh - 211px - 58px);
+    margin-top: 6.5rem;
+    position: relative;
   }
+  /* HEADER FOOTER COLOR */
   .header, .footer{
     background-color: #111;
   }
@@ -45,6 +49,7 @@
   .logo:hover{
     color: #ff0000 !important;
   } 
+  /* NAV STYLE */
   .nav-links{
     font-size: 12px;
     font-weight: light;
@@ -56,6 +61,7 @@
   .nav-items:hover{
     color: rgb(211, 211, 211) !important;
   }
+  /* SEARCH INPUT DESIGN */
   .sidenav{
     height: 100%;
 
@@ -72,6 +78,7 @@
     box-shadow: none !important;
     border-radius: 0%;
   }
+  /* SEARCH BUTTON DESIGN */
   .btn-search{
     position: absolute;
     right: 25%;
@@ -80,6 +87,7 @@
     box-shadow: none !important;
     background-color: #ff4655 !important;
   }
+  /* CARD NOTIF DESIGN */
   .cart-notif{
     position: relative;
   }
@@ -92,6 +100,7 @@
     top: 2%;
     right: 0%;
   }
+   /* PROFILE DESIGN */
   .profile{
     cursor: pointer;
   }
@@ -100,14 +109,6 @@
   }
   .profile-img, .profile-pic{
     width: 20px;
-  }
-  .main{
-    margin-top: 6.5rem;
-    position: relative;
-  }
-  #weapons{
-    scroll-margin-top: 6.5rem;
-    margin-top: 10rem;
   }
   .bundles{
     max-height: 100%;
