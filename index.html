@@ -30,12 +30,12 @@
     padding: 0;
     margin: 0;
     height: 100%;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* to scroll the page smoothly */
   }
   /* MAIN CONTAINER */
   .main{
     height: 100%;
-    min-height: calc(100vh - 211px - 58px);
+    min-height: calc(100vh - 211px - 58px); /* this is to calculate minimum height of main container */
     margin-top: 6.5rem;
     position: relative;
   }
@@ -106,10 +106,10 @@
   }
   /* WEAPON SCROLL */
   #weapons{
-    scroll-margin-top: 6.5rem;
+    scroll-margin-top: 6.5rem;  /* this is to have a margin to top when viewing weapon category */
     margin-top: 10rem;
   }
-  /* VALORANT BACKGROUND */
+  /* VALORANT ADS BACKGROUND */
   .home-page{
     box-shadow: 0 0px 10px 0 rgb(0 0 0 / 14%);
     background-color: #0f1923;
@@ -124,7 +124,7 @@
   }
   /*CAROUSEL STYLE */
   .carousel-item img{
-    filter: brightness(60%);
+    filter: brightness(60%); /* adjusted brightness to 60% to emphasize texts */
   }
   #carouselBundles{
     width: 100%;
@@ -143,6 +143,7 @@
   .btn-see-more:hover .arrow{
     margin-left: 10px;
   }
+   /* WEAPON CATEGORY CARD BACKGROUND COLOR */
   .bg-v-dark{
     background-color: #0f1923;
   }
@@ -155,8 +156,8 @@
     transition: .5s ease-in-out;
   }
   .weapon-link:hover img{
-    transform: scale(1.2);
-    filter: brightness(200%);
+    transform: scale(1.2); /* zooming in when hovered */
+    filter: brightness(200%); /* increased brightness to 200% to emphasize the filtered image*/
   }
   .weapon-link{
     display: flex;
@@ -173,12 +174,12 @@
     position: relative;
     overflow: hidden;
   }
-  /* FILTER STYLE */
+  /* FILTER IMAGE STYLE */
   a span.bg-red {
     left: -15%;
     position: absolute;
     background-color: red;
-    mix-blend-mode: darken;
+    mix-blend-mode: darken; /* to blend red color in weapon category image */
     opacity: .9;
     width: 0%;
     height: 100%;
@@ -291,7 +292,7 @@
     color: #ece8e1;
   }
   .button-weapons a:hover span.bg {
-    width: 110%;
+    width: 110%;  /* view arsenal hover */
   }
   .button-weapons a:hover span.text:after {
     background: #ece8e1;
@@ -390,7 +391,7 @@
           <hr>
           <div class="bundles">
             <div class="row g-5">
-              <!-- CAROUSEL -->
+              <!-- CAROUSEL OF BUNDLE -->
               <div class="col-lg-6 col-md-12"  style="z-index: 1;">
                 <div id="carouselBundles" class="carousel slide" data-bs-ride="carousel" data-aos="fade-right" data-aos-delay="400" aos-init aos-animate>
                   <div class="carousel-indicators">
@@ -502,7 +503,7 @@
         <div class="bar-code">
           <img src="https://assets.valorantesports.com/val/bar-code.08293391de.svg" height="441" width="64" alt="" class="valo-bar-code" data-aos="fade-up" data-aos-delay="400" aos-init aos-animate>
         </div>
-        <!-- YOUTUBE EMBED -->
+        <!-- EMBEDDED YOUTUBE SKIN BUNDLE ADS -->
         <iframe class="mt-5" width="100%" height="600px" src="https://www.youtube.com/embed/O3InzdUOhxs?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" data-aos="fade-up" data-aos-delay="1100" aos-init aos-animate></iframe>     
         <div id="weapons"></div>
         <div class="weapons-title text-center" data-aos="fade-up" data-aos-delay="100" aos-init aos-animate>
