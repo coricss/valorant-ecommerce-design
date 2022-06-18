@@ -25,6 +25,8 @@
 
   <!-- STYLE CSS -->
   <link href='css/style.css' rel='stylesheet'>
+  <script src="./js/script.js" defer></script>
+</head>  
 <body class="login-body">
   <div class="container-fluid">
     <div class="row">
@@ -41,7 +43,8 @@
           <div class="sign-in text-center mb-5">
             <h2 class="fw-bold">Sign In</h2>
           </div>
-          <form action="">
+          <form action="" onsubmit="login_auth(event)">
+            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded mt-3" id="username" hidden>Invalid Username or Password.</label>
             <div class="form-group mb-4">
               <input type="text" class="form-control login-input-field" id="username" name="username" placeholder="Username">
             </div>
