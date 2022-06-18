@@ -433,3 +433,28 @@ h4.head-title{
   .btn-socmed{
     box-shadow: none !important;
   }
+
+.login-body{
+  background: url('../assets/images/neon-valorant-hd-wallpaper-uhdpaper.com-3@1@f.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-y: hidden;
+}
+.login-wrapper{
+  width:100vw;
+  height:90vh;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.login-container{
+  width: 40%;
+  height: 100%;
+  padding: 100px;
+}
+.login-input-field{
+  height: 60px;
+}
