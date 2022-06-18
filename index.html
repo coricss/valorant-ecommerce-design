@@ -40,19 +40,44 @@
       </div>
       <div class="login-wrapper">
         <div class="login-container bg-white">
-          <div class="sign-in text-center mb-5">
+          <div class="sign-in text-center mt-5 mb-5">
             <h2 class="fw-bold">Sign In</h2>
           </div>
           <form action="" onsubmit="login_auth(event)">
-            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded mt-3" id="username" hidden>Invalid Username or Password.</label>
+            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded mt-3 w-100" id="username" hidden>Invalid Username or Password.</label>
             <div class="form-group mb-4">
-              <input type="text" class="form-control login-input-field" id="username" name="username" placeholder="Username">
+              <input type="text" class="form-control login-input-field" id="username" name="username" placeholder="USERNAME" required>
             </div>
             <div class="form-group mb-4">
-              <input type="password" class="form-control login-input-field" id="password" name="password" placeholder="Password">
+              <input type="password" class="form-control login-input-field" id="password" name="password" placeholder="PASSWORD" required>
             </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-lg w-100" id="password" name="password" placeholder="Password">
+            <div class="d-flex justify-content-center mb-4">
+              <button type="button" class="btn btn-primary p-3 w-50 d-flex align-items-center justify-content-center">
+                <i class='bx bxl-facebook-circle fs-2'></i>
+              </button>
+              <button type="button" class="btn btn-light p-3 w-50 mx-2 border border-dark d-flex align-items-center justify-content-center">
+                <img src="assets/images/google-logo.png" width="25px" alt="">
+              </button>
+              <button type="button" class="btn btn-dark p-3 w-50 d-flex align-items-center justify-content-center">
+                <i class='bx bxl-apple fs-2' ></i>
+              </button>
+            </div>
+            <div class="form-group mb-5 fs-5">
+              <input type="checkbox" class="stay-signed-in form-check-input" id="stay-signed-in">
+              <label for="stay-signed-in" class="stay-signed-in">Stay signed in</label>
+            </div>
+            <div class="form-group d-flex justify-content-center mb-5">
+              <button type="submit" class="btn btn-danger btn-lg btn-login d-flex align-items-center justify-content-center p-4" id="password" name="password" placeholder="Password">
+                <i class='bx bx-right-arrow-alt fs-1'></i>
+              </button>
+            </div>
+            <div class="text-center">
+              <a href="#" class="text-decoration-none">
+                <h6 class="fw-bold text-muted text-uppercase">Can't Sign In?</h6>
+              </a>
+              <a href="#" class="text-decoration-none">
+                <h6 class="fw-bold text-muted text-uppercase">Create an account</h6>
+              </a>
             </div>
           </form>
         </div>
