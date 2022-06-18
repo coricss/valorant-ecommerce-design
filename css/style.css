@@ -440,7 +440,6 @@ h4.head-title{
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  overflow-y: hidden;
 }
 .login-wrapper{
   width:100vw;
@@ -451,10 +450,16 @@ h4.head-title{
   justify-content:center;
 }
 .login-container{
-  width: 40%;
+  width: 35%;
   height: 100%;
-  padding: 100px;
+  padding: 50px;
 }
 .login-input-field{
   height: 60px;
+}
+.stay-signed-in{
+  cursor: pointer;
+}
+.btn-login{
+  border-radius: 30%;
 }
