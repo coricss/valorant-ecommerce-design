@@ -44,10 +44,11 @@
             <h2 class="fw-bold">Sign In</h2>
           </div>
           <form action="" onsubmit="login_auth(event)">
-            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded mt-3 w-100" id="username" hidden>Invalid Username or Password.</label>
+            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded w-100" id="username" hidden>Incorrect Username.</label>
             <div class="form-group mb-4">
               <input type="text" class="form-control login-input-field" id="username" name="username" placeholder="USERNAME" required>
             </div>
+            <label for="exampleFormControlInput1" class="form-label text-light bg-danger p-2 rounded w-100" id="password" hidden>Incorrect Password.</label>
             <div class="form-group mb-4">
               <input type="password" class="form-control login-input-field" id="password" name="password" placeholder="PASSWORD" required>
             </div>

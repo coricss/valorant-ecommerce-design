@@ -16,10 +16,14 @@ const login_auth = (e) => {
         document.getElementById('password').removeAttribute("hidden");
         password.classList.add('border-danger');
     } 
-    if (user != username.value || pass != password.value) {
+    if (user != username.value) {
         document.getElementById('username').removeAttribute("hidden");
         username.classList.add('border-danger');
-        password.classList.add('border-danger');
+        
+    }
+    if (pass != password.value) {
+      document.getElementById('password').removeAttribute("hidden");
+      password.classList.add('border-danger');
     }
 }
 
