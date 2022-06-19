@@ -212,14 +212,23 @@
         <div class="countdown-body mt-5">
           <div class="bg-dark">
             <div class="timer text-white text-center p-5">
-              <h4 class="text-uppercase">Battle Pass Ends In:</h4>
-              <span style="font-family: 'Anton', sans-serif; font-size: 70px;">00: 00 : 00</span>
-              <div class="d-flex justify-content-center">
-                <p style="font-family: 'Anton', sans-serif; font-size: 25px;">Days</p>
-                <p class="mx-5" style="font-family: 'Anton', sans-serif; font-size: 25px;">Hours</p>
-                <p style="font-family: 'Anton', sans-serif; font-size: 25px;">Minutes</p>
+              <h4 class="text-uppercase" data-aos="zoom-in" data-aos-delay="100" aos-init aos-animate>Battle Pass Ends In:</h4>
+              <div class="countdown-body" data-aos="zoom-in" data-aos-delay="300" aos-init aos-animate>
+                <span id="countdown" style="font-family: 'Anton', sans-serif; font-size: 45px;"></span>
               </div>
               
+              <div class="button-weapons mt-2" data-aos="zoom-in" data-aos-delay="500" aos-init aos-animate>
+                <a href="#weapons">
+                  <!-- <button class="btn btn-primary btn-lg w-100">Choose Weapons</button> -->
+                  <p class="m-0">
+                    <span class="bg"></span>
+                    <span class="base"></span>
+                    <span class="text">
+                      BUY BATTLE PASS NOW
+                    </span>
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -395,6 +404,7 @@
     </footer>
   </div>
 
+  <script src="js/script.js"></script>
 
   <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
