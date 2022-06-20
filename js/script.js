@@ -1,31 +1,51 @@
-const user =  'user1';
-const pass = 'user1';
+const user = 'user1'; //username
+const pass = 'user1'; //password
 
-const login_auth = (e) => {
-    e.preventDefault();
-    const username = document.getElementsByName('username')[0];
-    const password = document.getElementsByName('password')[0];
-    if (user === username.value && pass === password.value) {
-        window.location.href="home.html";
-    }
-    if (!username.value) {
-        document.getElementById('username').removeAttribute("hidden");
-        username.classList.add('border-danger');
-    } 
-    if (!password.value) {
-        document.getElementById('password').removeAttribute("hidden");
-        password.classList.add('border-danger');
-    } 
-    if (user != username.value) {
-        document.getElementById('username').removeAttribute("hidden");
-        username.classList.add('border-danger');
-        
-    }
-    if (pass != password.value) {
-      document.getElementById('password').removeAttribute("hidden");
-      password.classList.add('border-danger');
-    }
-}
+const username = document.getElementsByName('username')[0]; //get username class index 0
+const password = document.getElementsByName('password')[0]; //get passowrd class index 0
+
+const usernameError = document.getElementById('username-error'); //get username span element id
+const passwordError = document.getElementById('password-error'); //get password span element id
+
+//when typing in username input this function will execute
+document.getElementById('username').addEventListener('keyup', () => {
+  if(user !== username.value){ // check if inputted username is not equal to declared username
+    username.classList.add('border-danger'); // if true, username input will have border red
+    username.classList.remove('border-success'); // removing border success to replace by border danger
+    usernameError.classList.remove('d-none'); // to show username error message
+  }else{
+    username.classList.remove('border-danger'); // if false, will remove border danger
+    username.classList.add('border-success');  // replace border success
+    usernameError.classList.add('d-none'); // to hide username error message
+  }
+})
+
+//when typing in password input this function will execute
+document.getElementById('password').addEventListener('keyup', () => {
+  if(pass !== password.value){ // check if inputted password is not equal to declared password
+    password.classList.add('border-danger'); // if true, password input will have border red
+    password.classList.remove('border-success'); // removing border success to replace by border danger
+    passwordError.classList.remove('d-none'); // to show password error message
+  }else{
+    password.classList.remove('border-danger'); // if false, will remove border danger
+    password.classList.add('border-success'); // replace border success
+    passwordError.classList.add('d-none'); // to hide password error message
+  }
+})
+
+//when log in button clicked this will excute
+document.getElementById('btn-login').addEventListener('click', () => {
+  if((username.value === '') && (password.value === '')){ // check if username and password is both empty
+    username.classList.add('border-danger');
+    password.classList.add('border-danger');
+  }else if(username.value === ''){  // check if username is empty
+    username.classList.add('border-danger');
+  }else if(password.value === ''){ // check if password is empty
+    password.classList.add('border-danger');
+  }else if ((user === username.value) && (pass === password.value)) { // check if username and password is both correct
+    window.location.href="home.html";
+  }
+})
 
 
 var seconds = 259200; //days to seconds
