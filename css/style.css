@@ -463,6 +463,9 @@ h4.head-title{
 .btn-login{
   border-radius: 30%;
 }
+div.sign-up h6:hover{
+  color: #1a1a1a !important;
+}
 .timer-label{
   font-family: 'Anton', sans-serif; 
   font-size: 30px; 
