@@ -26,9 +26,10 @@ var startTimer = () => {
     seconds--;
   }
 
-
 }
+
 var countdownTimer = setInterval('startTimer()', 1000); //setting the interval in 1 sec
+
 
 //LOGIN AUTH
 const user = 'user1'; //username
@@ -41,7 +42,8 @@ const usernameError = document.getElementById('username-error'); //get username 
 const passwordError = document.getElementById('password-error'); //get password span element id
 
 //when typing in username input this function will execute
-document.getElementById('username').addEventListener('keyup', () => {
+document.getElementById('username').addEventListener('keyup', (e) => {
+  e.preventDefault();
   if(user !== username.value){ // check if inputted username is not equal to declared username
     username.classList.add('border-danger'); // if true, username input will have border red
     username.classList.remove('border-success'); // removing border success to replace by border danger
@@ -51,10 +53,11 @@ document.getElementById('username').addEventListener('keyup', () => {
     username.classList.add('border-success');  // replace border success
     usernameError.classList.add('d-none'); // to hide username error message
   }
-})
+});
 
 //when typing in password input this function will execute
-document.getElementById('password').addEventListener('keyup', () => {
+document.getElementById('password').addEventListener('keyup', (e) => {
+  e.preventDefault();
   if(pass !== password.value){ // check if inputted password is not equal to declared password
     password.classList.add('border-danger'); // if true, password input will have border red
     password.classList.remove('border-success'); // removing border success to replace by border danger
@@ -64,10 +67,11 @@ document.getElementById('password').addEventListener('keyup', () => {
     password.classList.add('border-success'); // replace border success
     passwordError.classList.add('d-none'); // to hide password error message
   }
-})
+});
 
 //when log in button clicked this will excute
-document.getElementById('btn-login').addEventListener('click', () => {
+document.getElementById('btn-login').addEventListener('click', (e) => {
+  e.preventDefault();
   if((username.value === '') && (password.value === '')){ // check if username and password is both empty
     username.classList.add('border-danger');
     password.classList.add('border-danger');
@@ -78,4 +82,4 @@ document.getElementById('btn-login').addEventListener('click', () => {
   }else if ((user === username.value) && (pass === password.value)) { // check if username and password is both correct
     window.location.href="home.html";
   }
-})
+});
