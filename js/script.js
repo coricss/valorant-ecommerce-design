@@ -72,6 +72,7 @@ document.getElementById('password').addEventListener('keyup', (e) => {
 //when log in button clicked this will excute
 document.getElementById('btn-login').addEventListener('click', (e) => {
   e.preventDefault();
+  localStorage.setItem('audioStatus', 'play'); //set audioStatus to play when logged in
   if((username.value === '') && (password.value === '')){ // check if username and password is both empty
     username.classList.add('border-danger');
     password.classList.add('border-danger');
