@@ -11,7 +11,7 @@ var startTimer = () => {
   var minutes     = Math.floor(minutesLeft/60); //calculate minutes by dividing minutes left to 60sec/1min
   var remainingSeconds = seconds % 60; //calculate remaining seconds by getting the remainder of seconds in 1minute.
   
-  function pad(x) {
+  pad = (x) => {
     return (x < 10 ? "0" + x : x); //returning time number to 00 format, it changes when time number hits 10
   }
 
