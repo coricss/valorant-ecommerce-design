@@ -22,9 +22,13 @@ html, body{
  .header, .footer{
   background-color: #111;
 }
+.footer-wrapper{
+  background-color: #292929;
+}
 h4.head-title{
   margin-left: 10px;
   margin-bottom: 0;
+  font-family: 'VALORANT', sans-serif;
 }
 .logo:hover{
   color: #ff0000 !important;
@@ -33,13 +37,13 @@ h4.head-title{
  .nav-links{
   font-size: 12px;
   font-weight: light;
-  color: rgb(153, 153, 153) !important;
+  color: #999999 !important;
 }
 .nav-items{
   color: #fff !important;
 }
 .nav-items:hover{
-  color: rgb(211, 211, 211) !important;
+  color: #d3d3d3 !important;
 }
 /* SEARCH INPUT DESIGN */
 .search-bar{
@@ -66,7 +70,7 @@ h4.head-title{
   }
   .notif-cart{
     position: absolute;
-    background-color: red;
+    background-color: #ff0000;
     height: 15px;
     width: 15px;
     font-size: 10px;
@@ -78,7 +82,7 @@ h4.head-title{
     cursor: pointer;
   }
   .profile:hover .username{
-    color: rgb(211, 211, 211) !important;
+    color: #d3d3d3 !important;
   }
   .profile-img, .profile-pic{
     width: 20px;
@@ -90,7 +94,7 @@ h4.head-title{
   }
    /* VALORANT ADS BACKGROUND */
    .home-page{
-    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 14%);
+    box-shadow: 0 0px 10px 0 #00000024;
     background-color: #0f1923;
     background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltbded518020183769/5eb26f5389bac8148a8006cc/agent-background-generic.JPG'); 
     background-repeat: no-repeat;
@@ -130,11 +134,22 @@ h4.head-title{
     width: 100% !important;
     border-radius: 0% !important;
   }
+  .category-title{
+    font-family: 'Anton', sans-serif; 
+    font-size: 35px;
+  }
+  .gun-category{
+    width: 18rem;
+  }
   /* WEAPON STYLE */
   .weapon-link img{
     transition: .5s ease-in-out;
   }
-  .weapon-link:hover img{
+  .weapon-link:hover img.img-product{
+    transform: scale(1.2); /* zooming in when hovered */
+    filter: brightness(150%); /* increased brightness to 200% to emphasize the filtered image*/
+  }
+  .weapon-link:hover img.img-category{
     transform: scale(1.2); /* zooming in when hovered */
     filter: brightness(150%); /* increased brightness to 200% to emphasize the filtered image*/
   }
@@ -188,7 +203,7 @@ h4.head-title{
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    box-shadow: 0 0 0 1px inset #ece8e14d;
     position: relative;
     margin: 10px 0;
     box-sizing: initial;
@@ -472,4 +487,7 @@ div.sign-up h6:hover{
   margin: 25px;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.music{
+  cursor: pointer
 }
