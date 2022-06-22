@@ -134,7 +134,7 @@ h4.head-title{
     width: 100% !important;
     border-radius: 0% !important;
   }
-  .category-title{
+  .category-title, .agent-role{
     font-family: 'Anton', sans-serif; 
     font-size: 35px;
   }
